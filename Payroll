@@ -1,0 +1,55 @@
+import java.util.Scanner
+
+class main {
+    public static void main(String[]args) {
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.println("__________________________________________________________________________________________");
+            System.out.print("Enter your Employee Name: ");
+            String name = input.nextLine();
+            System.out.print("Select between F (Full Time or P (Part Time): ");
+            char letter = input.nextLine().charAt(0);
+
+
+            if ( letter == 'F' || letter == 'f'){
+
+                System.out.println("__________________________________________________________________________________");
+                System.out.println("===================Full Time Employee===================");
+                System.out.println("Employee Name: " + name);
+                System.out.println("Basic Pay:1439.0");
+                System.out.println("Gross Pay:1439.5");
+
+
+            }
+
+
+            else if ( letter == 'P' || letter == 'p') {
+
+                System.out.println("===================Part Time Employee===================");
+                System.out.print("Enter rate per hour: ");
+                Float rph = input.nextFloat();
+                System.out.print("Enter no. per hours of work: ");
+                Float hoursw = input.nextFloat();
+                Float basicp = rph * hoursw;
+                System.out.print("Enter no. of overtime: ");
+                Float overt = input.nextFloat();
+                Float ot = overt * (rph * 125/100);
+                Float grossp = basicp + overt;
+                System.out.println("____________________________________________________________________________");
+                System.out.println("Name: " + name );
+                System.out.println("Basic Pay: " + basicp );
+                System.out.println("Overtime Pay: " + overt );
+                System.out.println("____________________________________________________________________");
+                System.out.println("Gross Pay: " + grossp );
+
+            }
+
+                else {
+
+                    System.out.println("System Error");
+
+                }
+            }
+        
+        }
+
+    }
